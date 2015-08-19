@@ -19,7 +19,7 @@ Vagrant.configure(2) do |config|
     # node.vm.network "public_network"
 
     node.vm.synced_folder ".", "/vagrant", disabled: true
-    node.vm.synced_folder "./db", "/dbmyql"
+    node.vm.synced_folder "./db", "/dbsql"
     node.vm.synced_folder "./log", "/backup/log"
     node.vm.synced_folder "./code", "/code"
    
