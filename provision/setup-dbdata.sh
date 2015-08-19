@@ -2,4 +2,4 @@
 #
 
 mysql -u root -pshopperDBadmin demoa6 < $1
-mysql -u root -pshopperDBadmin demoa6 < $1
+mysql -u root -pshopperDBadmin root < $1
