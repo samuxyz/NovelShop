@@ -5,10 +5,11 @@ Quick setup Novellink Test & dev Shop Env.
 ------
 ## 使用前需先安裝
 1. 安裝**virtual box**
-	https://www.virtualbox.org/wiki/Downloads
+https://www.virtualbox.org/wiki/Downloads
 
 2. 安裝**vagrant**
-	https://www.vagrantup.com/
+https://www.vagrantup.com
+
 ------
 
 ## 使用NovelShop Dev所帶來的好處
