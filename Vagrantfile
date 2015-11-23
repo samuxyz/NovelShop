@@ -1,10 +1,10 @@
-# Author : Morgan 開店123
+# Author : Sam 開店123
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 
 Vagrant.configure(2) do |config|
-
+  
   config.vm.define "Shop" do |node|
 
     node.vm.box = "MC3/NovelShop"
@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
     node.ssh.username = 'shopper'
     node.ssh.password = 'novellinkshop!@#'
     node.ssh.pty = 'ture'
-
+	
     # node.vm.network "forwarded_port", guest: 80, host: 8080
     node.vm.network "private_network", ip: "192.168.56.194"
     # node.vm.network "public_network"
@@ -22,12 +22,13 @@ Vagrant.configure(2) do |config|
     node.vm.synced_folder "./db", "/dbsql"
     node.vm.synced_folder "./log", "/backup/log"
     node.vm.synced_folder "./code", "/code"
-   
-    node.vm.provider "virtualbox" do |vb|
-        vb.gui = true
-        vb.memory = "1024"
-    end
+	node.vm.provision :shell, path: "provision/start-httpd.sh"
+    #node.vm.provider "virtualbox" do |vb|
+        #vb.gui = true
+        #vb.memory = "1024"
+    #end
 
   end
+  #config.vm.provision :shell, path: "provision/start-httpd.sh"
 
 end
